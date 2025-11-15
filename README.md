@@ -87,18 +87,5 @@ Metrics include:
 
 ---
 
-### 5. Web Demo
-The web application includes:
-
-- **Frontend:** React-based UI  
-- **Backend:** FastAPI server for inference  
-- **Features:**  
-  - Input text box  
-  - Language dropdown  
-  - Toxicity + category probabilities  
-  - Visualization of harm distribution
-
----
-
 
 
