@@ -1,5 +1,6 @@
 # Multilingual Toxicity & Safety Classification — IndicGuard
 
+
 This repository contains the complete implementation for **Assignment-3 of CS613 (NLP)**, IIT Gandhinagar.  
 Our objective is to extend the **UnityAI-Guard** multilingual toxicity detection framework by:
 
@@ -10,6 +11,12 @@ Our objective is to extend the **UnityAI-Guard** multilingual toxicity detection
 - Documenting experiments, ablations, and evaluation
 
 The project integrates dataset curation, supervised finetuning, evaluation, and deployment into one cohesive pipeline.
+
+---
+
+## Quick Links  
+- [Dataset on HuggingFace](https://huggingface.co/datasets/advaitIITGN/unity_AI_guard_v2_dataset)
+- [Website](https://saikarna913.github.io/AI-Guard/)
 
 ---
 
@@ -89,9 +96,7 @@ The web application includes:
   - Input text box  
   - Language dropdown  
   - Toxicity + category probabilities  
-  - Visualization of harm distribution  
-
-To run the demo, see instructions below.
+  - Visualization of harm distribution
 
 ---
 
