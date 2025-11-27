@@ -220,47 +220,54 @@ const Index = () => {
 
     <div className="space-y-6">
 
-      {/* Majority Category Block */}
-      <div className="flex items-start gap-4 p-4 rounded-lg bg-primary/5">
-        <div className="p-3 rounded-lg bg-primary/10">
-          <Shield className="w-6 h-6 text-primary" aria-label="Shield Icon" />
-        </div>
-        <div className="flex-1">
-          <h3 className="font-semibold mb-2 text-lg">Majority Category</h3>
-          <Badge variant="secondary" className="text-lg px-4 py-2">
-            {result.category}
+     {/* Majority Category Block */}
+<div className="flex items-start gap-4 p-4 rounded-lg bg-primary/5">
+  <div className="p-3 rounded-lg bg-primary/10">
+    <Shield className="w-6 h-6 text-primary" aria-label="Shield Icon" />
+  </div>
+
+  <div className="flex-1">
+    <h3 className="font-semibold mb-2 text-lg">Majority Category</h3>
+
+    <Badge variant="secondary" className="text-lg px-4 py-2">
+      {result.category} — {CATEGORY_LABELS[result.category] ?? "Unknown"}
+    </Badge>
+
+    <p className="text-sm text-muted-foreground mt-1">
+      Highest probability category.
+    </p>
+  </div>
+</div>
+
+{/* All Categories Block */}
+<div className="flex items-start gap-4 p-4 rounded-lg bg-muted/50">
+  <div className="p-3 rounded-lg bg-muted">
+    <List className="w-6 h-6 text-muted-foreground" aria-label="List Icon" />
+  </div>
+
+  <div className="flex-1">
+    <h3 className="font-semibold mb-2 text-lg">
+      All Categories
+    </h3>
+
+    <div className="flex flex-wrap gap-2">
+      {Object.entries(result.nonZero ?? {}).map(([cat, prob]) => {
+        const label = CATEGORY_LABELS[cat] ?? "Unknown";
+
+        return (
+          <Badge
+            key={cat}
+            variant={cat === result.category ? "default" : "secondary"}
+            className="px-3 py-1 text-sm"
+          >
+            {cat}: {label} — {(prob * 100).toFixed(1)}%
           </Badge>
+        );
+      })}
+    </div>
+  </div>
+</div>
 
-          <p className="text-sm text-muted-foreground mt-1">
-            Highest probability category.
-          </p>
-        </div>
-      </div>
-
-      {/* All Categories Block */}
-      <div className="flex items-start gap-4 p-4 rounded-lg bg-muted/50">
-        <div className="p-3 rounded-lg bg-muted">
-          <List className="w-6 h-6 text-muted-foreground" aria-label="List Icon" />
-        </div>
-
-        <div className="flex-1">
-          <h3 className="font-semibold mb-2 text-lg">
-            All Categories (Probability &gt; 0)
-          </h3>
-
-          <div className="flex flex-wrap gap-2">
-            {Object.entries(result.nonZero ?? {}).map(([cat, prob]) => (
-              <Badge
-                key={cat}
-                variant={cat === result.category ? "default" : "secondary"}
-                className="px-3 py-1 text-sm"
-              >
-                {cat}: {(prob * 100).toFixed(1)}%
-              </Badge>
-            ))}
-          </div>
-        </div>
-      </div>
 
       {/* Safety Status */}
       <div className="flex items-start gap-4 p-4 rounded-lg bg-primary/5">
