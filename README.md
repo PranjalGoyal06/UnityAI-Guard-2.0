@@ -1,4 +1,4 @@
-# Multilingual Toxicity & Safety Classification — IndicGuard
+# Multilingual Toxicity & Safety Classification — UnityAI-Guard 2.0
 
 
 This repository contains the complete implementation for **Assignment-3 of CS613 (NLP)**, IIT Gandhinagar.  
